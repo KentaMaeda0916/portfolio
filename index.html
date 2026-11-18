@@ -1173,7 +1173,7 @@ footer { background: var(--bg); }
 <script type="module">
 // Safari has no word-break:auto-phrase, so phrase-aware breaks come from BudouX there.
 if (!CSS.supports('word-break', 'auto-phrase')) {
-  import('https://cdn.jsdelivr.net/npm/budoux@0.6.4/+esm').then(({ loadDefaultJapaneseParser }) => {
+  import('./vendor/budoux-0.6.4.js').then(({ loadDefaultJapaneseParser }) => {
     const parser = loadDefaultJapaneseParser();
     document.querySelectorAll('h1 .ln > span, h2, h3, .catch, p, dd, dt, .history span, .history strong, .strengths strong, .strengths span, .todos-done span').forEach(el => parser.applyToElement(el));
   }).catch(() => {});
